@@ -1032,4 +1032,30 @@ int APS5_VABI sceUltConditionVariableOptParamInitialize() {
     return 0;
 }
 
+
+int APS5_VABI _sceUltConditionVariableOptParamInitialize() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI _sceUltQueueDataResourcePoolOptParamInitialize() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI _sceUltQueueOptParamInitialize() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI _sceUltUlthreadOptParamInitialize() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI _sceUltWaitingQueueResourcePoolOptParamInitialize() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
 }
