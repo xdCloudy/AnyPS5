@@ -691,3 +691,11 @@ int APS5_VABI renameat_nid_postfix(int oldfd, const char* from, int newfd, const
 }
 
 }
+extern "C" {
+
+int APS5_VABI sceKernelGetOpenPsId() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+}

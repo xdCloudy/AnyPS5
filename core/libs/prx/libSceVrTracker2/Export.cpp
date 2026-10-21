@@ -1,3 +1,4 @@
+#include "SceTypes.hpp"
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
@@ -255,6 +256,189 @@ std::int32_t APS5_VABI VrTracker2Unknown06() {
 APS5_EXPORT("U1VYczwqukY", VrTracker2Unknown07);
 std::int32_t APS5_VABI VrTracker2Unknown07() {
     NotImplemented_nid_no_patch("U1VYczwqukY");
+    return 0;
+}
+
+}
+extern "C" {
+
+int APS5_VABI SceVrTracker2DepthCubeMapGetData() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI SceVrTracker2DepthCubeMapInit() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI SceVrTracker2DepthCubeMapUpdate() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2ActivateMap() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2CheckDeviceIsInsidePlayAreaBoundary() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2CheckPointIsInsidePlayAreaBoundary() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetControllerConfig() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetControllerImage() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetControllerTraceResult() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetCoordinateSystemEx() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetIrTrackerResult() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetMapQuality() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetNearObjectDepth() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetPlayAreaConfig() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetPlayAreaData() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetPlayAreaData2() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetPlayAreaInformation() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetPlayAreaResult() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetRawCameraMesh() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetRawCameraMeshSize() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetResultForPlayArea() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetSlamConfig() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2GetSlamResult() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2InitializeMap() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2IrGetDebugRawImage() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2RefineMap() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2RemoveMap() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2ResetLocalCoordinateEx() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2ResetLocalCoordinateWithPose() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2SetControllerConfig() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2SetCoordinateSystemEx() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2SetCurrentPlayAreaId() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2SetPlayAreaConfig() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2SetPlayAreaData() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2SetPlayAreaData2() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVrTracker2SetSlamConfig() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

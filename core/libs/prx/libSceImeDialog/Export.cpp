@@ -201,3 +201,11 @@ int APS5_VABI sceImeDialogSetPanelPosition(int32_t posx, int32_t posy) {
 }
 
 }
+extern "C" {
+
+int APS5_VABI sceImeDialogInitInternalWithSubInfo() {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+}
