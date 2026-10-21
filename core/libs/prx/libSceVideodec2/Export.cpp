@@ -768,5 +768,34 @@ void Videodec2PictureCrop_nid_no_patch(std::uint64_t handle, const void* frameBu
     if (picture == decoder.pictures.end()) throw std::runtime_error("Videodec2: unknown frame buffer");
     *crop = picture->second.crop;
 }
+int APS5_VABI sceVideodec2CreateDecoderBid(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVideodec2CreateHevcDecoder(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVideodec2GetHevcPictureInfo(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVideodec2MapDirectMemory(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVideodec2MapMemory(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceVideodec2QueryHevcDecoderMemoryInfo(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
 
 }

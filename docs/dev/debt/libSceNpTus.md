@@ -127,6 +127,8 @@
 - [sceNpTusTryAndSetVariableForCrossSaveVUserAsync](../../../core/libs/prx/libSceNpTus/Export.cpp) (libSceNpTus) - unknown signature
 - [sceNpTusDeleteNpTitleCtx](../../../core/libs/prx/libSceNpTus/Export.cpp) (libSceNpTus) - the PS5 signature, error codes and child-request lifetime have not been measured on a console. Deletion invalidates the context and all its requests, following [shadPS4](https://github.com/shadps4-emu/shadPS4/blob/a808e7626e3c7de8d0f0fda6a91f620b42f6c762/src/core/libraries/np/np_tus/np_tus.cpp#L158-L180).
 
+- [libSceNpTus pending exports](../../../core/libs/prx/libSceNpTus/Export.cpp) - 10 named callable exports are listed in the [PS5 3.20 export table](https://github.com/DNNDHH/PS5-3.20_Libs/blob/b2a77c09cd71c01f34c790cfbe98c751a13262ad/libSceNpTus.c) and were cross-checked against the same module in PS5 firmware 13.60. Their signatures and behaviour are unverified; the declarations use the no-parameter unknown-signature convention and throw through `NotImplemented_nid_no_patch`.
+
 ### Functional
 
 - [sceNpTusCreateNpTitleCtxA](../../../core/libs/prx/libSceNpTus/Export.cpp) (libSceNpTus) - creates a title context without checking sign-in, up to 32 contexts (`TOO_MANY_OBJECTS` beyond); shadPS4 returns the `sceNpGetNpId` error instead. Requests are limited to 256, and the limits are not measured on a console.

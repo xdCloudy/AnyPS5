@@ -4,6 +4,8 @@
 
 - [sceVideodec2GetAvcPictureInfo](../../../core/libs/prx/libSceVideodec2/Export.cpp) (libSceVideodec2) - runs the `sceVideodec2GetPictureInfo` body (KytyPS5 binds both NIDs to one function; SharpProspero gives both the same `outputInfo, first, second` signature); the second (bottom field) picture info is never written, since only progressive H.264 output is modelled. prosper calls the AVC layout unestablished (no title observed calling it)
 
+- [libSceVideodec2 pending exports](../../../core/libs/prx/libSceVideodec2/Export.cpp) - 6 named callable exports are listed in the [PS5 3.20 export table](https://github.com/DNNDHH/PS5-3.20_Libs/blob/b2a77c09cd71c01f34c790cfbe98c751a13262ad/libSceVideodec2.c) and were cross-checked against the same module in PS5 firmware 13.60. Their signatures and behaviour are unverified; the declarations use the no-parameter unknown-signature convention and throw through `NotImplemented_nid_no_patch`.
+
 ### Functional
 
 - [AVC parameter-set units](../../../core/libs/prx/libSceVideodec2/Export.cpp) (libSceVideodec2) - an H.264 access unit with no slice NAL (types 1 to 5), such as the sequence and picture parameter sets Twispero (PPSA99474) submits on their own before a stream's first slices, is kept and put in front of the next unit that has a slice, and `sceVideodec2Decode` returns 0 with no picture for it, since libavcodec refuses a packet without a slice. What the console returns for such a unit is not known. HEVC units of parameter sets alone are still passed to libavcodec as they are

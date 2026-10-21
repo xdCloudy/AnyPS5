@@ -4,6 +4,8 @@
 
 - [sceSharePlayInitialize](../../../core/libs/prx/libSceSharePlay/Export.cpp) (libSceSharePlay) - the library keeps no state, so the heap is not used. A null heap is accepted: PPSA11386 passes a null heap and 0x1800 bytes and stops on any non-zero result. The error for a zero size is unknown, so it throws
 
+- [libSceSharePlay pending exports](../../../core/libs/prx/libSceSharePlay/Export.cpp) - 16 named callable exports are listed in the [PS5 3.20 export table](https://github.com/DNNDHH/PS5-3.20_Libs/blob/b2a77c09cd71c01f34c790cfbe98c751a13262ad/libSceSharePlay.c) and were cross-checked against the same module in PS5 firmware 13.60. Their signatures and behaviour are unverified; the declarations use the no-parameter unknown-signature convention and throw through `NotImplemented_nid_no_patch`.
+
 ### Functional
 
 - [sceSharePlayGetCurrentConnectionInfoA](../../../core/libs/prx/libSceSharePlay/Export.cpp) (libSceSharePlay) - reports no Share Play session, as the library keeps none: status 0 (DORMANT), mode 0, empty online IDs, account IDs 0 and both user IDs -1 (`SCE_USER_SERVICE_USER_ID_INVALID`). A null pointer returns `SCE_SHARE_PLAY_ERROR_INVALID_ARGS` (0x810E0001). The 72-byte `SceSharePlayConnectionInfoA` layout and the error code follow [KytyPS5](https://github.com/KytyPS5/KytyPS5/blob/main/src/libs/libNet.cpp) and [fpPS4](https://github.com/red-prig/fpPS4/blob/trunk/src/ps4_libsceshareplay.pas), which agree on both; KytyPS5 sets the user IDs to -1 and fpPS4 leaves them 0, and which one the console returns is not verified. KytyPS5 also returns `SCE_SHARE_PLAY_ERROR_NOT_INITIALIZED` before `sceSharePlayInitialize`; this library keeps no initialization state and does not.

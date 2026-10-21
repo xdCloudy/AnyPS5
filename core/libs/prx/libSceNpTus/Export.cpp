@@ -744,4 +744,54 @@ int APS5_VABI sceNpTusTryAndSetVariableForCrossSaveVUserAsync(void) {
     return 0;
 }
 
+int APS5_VABI sceNpTssGetData(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceNpTusCreateNpTitleCtx(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceNpTusGetData(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceNpTusGetDataVUser(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceNpTusGetMultiSlotVariable(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceNpTusGetMultiSlotVariableVUser(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceNpTusSetData(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceNpTusSetDataVUser(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceNpTusSetMultiSlotVariable(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
+int APS5_VABI sceNpTusSetMultiSlotVariableVUser(void) {
+    NotImplemented_nid_no_patch(__func__);
+    return 0;
+}
+
 }
