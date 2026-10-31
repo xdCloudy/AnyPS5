@@ -1,0 +1,157 @@
+[
+  {
+    "branch": "codex/pr-overlap-fail-closed",
+    "sha": "aed6a0be208725cfadc65d9f557003b7c7c4fc4f",
+    "pr": 12737
+  },
+  {
+    "branch": "feat/beisobmf-box-accessors-10",
+    "sha": "4270b0d5fc2288b595000c532f6b08c5cdfe74ac",
+    "pr": 12733
+  },
+  {
+    "branch": "feat/libkernel-sys-pthread-attr-helpers",
+    "sha": "802a8c2ce22d959a42722472ae52f15cda49748c",
+    "pr": 12667
+  },
+  {
+    "branch": "feat/libkernel-sys-vm-map-timestamp",
+    "sha": "aa9a999928a98b99c79098f2302fc645406794f4",
+    "pr": 12658
+  },
+  {
+    "branch": "feat/libSceCamera-pending-exports",
+    "sha": "0aa3f3505b71897646d2562c55ea9cfebc15a891",
+    "pr": 10068
+  },
+  {
+    "branch": "feat/libSceAgcVsh-150-pending-exports",
+    "sha": "12a14ac1a517863335603d6d5762cec1ff1ac4f1",
+    "pr": 9990
+  },
+  {
+    "branch": "feat/ps5-ipmi-pending-89-round1",
+    "sha": "5dbfbc9382a4248859c448be4adb0ecbdac78f6e",
+    "pr": 9695
+  },
+  {
+    "branch": "feat/ps5-json2-inventory-74",
+    "sha": "be37cb907a4f769c8872d9f4ebdcc0055198edfc",
+    "pr": 9517
+  },
+  {
+    "branch": "feat/libSceNKWebKit-150-pending-exports",
+    "sha": "fcec4981a595386a8cbadaa6651eee1bd2fd4301",
+    "pr": 9435
+  },
+  {
+    "branch": "feat/agcdriver-evidenced-impls",
+    "sha": "36a7a09dae4605d0fb8e84cdad2a5591e2d68c4a",
+    "pr": 9086
+  },
+  {
+    "branch": "fix/agc-storage-edge-writeback",
+    "sha": "c0e6c9b14f091eacf98e2263b26f39d1d8e03178",
+    "pr": 9070
+  },
+  {
+    "branch": "feat/libSceNpManager-150-exports",
+    "sha": "2ae6cd18bfa6855cc7efdd5fcc8e4dde505ef3d7",
+    "pr": 9003
+  },
+  {
+    "branch": "feat/libSceNpCommon-150-exports",
+    "sha": "411a8e77112e528e2289d584bfb4534ad80c37ca",
+    "pr": 8983
+  },
+  {
+    "branch": "feat/pr-overlap-main-export-check",
+    "sha": "88d43efdd3115105fc051f1a9f62d146c6c4ac48",
+    "pr": 8970
+  },
+  {
+    "branch": "fix/pr-overlap-nid-postfix-aliases",
+    "sha": "39b0c5cb4ea72ab91d6fdfebf2494b8375c20b43",
+    "pr": 8961
+  },
+  {
+    "branch": "feat/ps5-videoout-exports",
+    "sha": "947b3ba6a0bcf84fc5bf7d8ca07ac9ce5c85a744",
+    "pr": 8955
+  },
+  {
+    "branch": "feat/ps5-videocoreinterface-exports",
+    "sha": "b2ebae8e3af540c1f13805648380ff949f9b3b76",
+    "pr": 8954
+  },
+  {
+    "branch": "feat/ps5-urlconfigresolver-exports",
+    "sha": "55c2864b32316e386482841ea7bbfbbdeee88e0d",
+    "pr": 8953
+  },
+  {
+    "branch": "feat/ps5-ult-exports",
+    "sha": "5a6128fa725678fa891f5bb626c9bd6b046357f4",
+    "pr": 8952
+  },
+  {
+    "branch": "feat/ps5-ssl-exports",
+    "sha": "8906049b33953854fbab1d20458ec347381c5c7c",
+    "pr": 8951
+  },
+  {
+    "branch": "feat/ps5-savedata-exports",
+    "sha": "65a6531b6e1ab5213b14cf20056499b998924e41",
+    "pr": 8950
+  },
+  {
+    "branch": "feat/ps5-npsnsfacebookdialog-exports",
+    "sha": "48d9c8b6e7cb4eaa48d39be7bdd7856c83654cac",
+    "pr": 8949
+  },
+  {
+    "branch": "feat/ps5-npmanager-exports",
+    "sha": "11a097be24c674e70b65a35e1467258c41a61863",
+    "pr": 8948
+  },
+  {
+    "branch": "feat/ps5-imedialog-exports",
+    "sha": "9781a70a19903af0038e09f976d2afbf1adf55ae",
+    "pr": 8947
+  },
+  {
+    "branch": "feat/ps5-httpcache-exports",
+    "sha": "57bb18047c44a3ca05cd4d2071b05f6582bb91be",
+    "pr": 8945
+  },
+  {
+    "branch": "feat/ps5-agc-exports",
+    "sha": "2b2e70ce20034c66935a0b9ec9dcaee8960292ca",
+    "pr": 8944
+  },
+  {
+    "branch": "feat/ps5-acm-exports",
+    "sha": "ea4e722fa25897aba42078ba642c797684667ad0",
+    "pr": 8943
+  },
+  {
+    "branch": "feat/ps5-videodec-exports",
+    "sha": "f9ae0c0eef1d86f23ac8999a6b4ebd1b219124de",
+    "pr": 8936
+  },
+  {
+    "branch": "feat/ps5-esvm-exports",
+    "sha": "733f478cc457de4fa0856cb057c6850d995d570b",
+    "pr": 8935
+  },
+  {
+    "branch": "feat/ps5-depth-exports",
+    "sha": "0ab1e6d37e76d54c6bb58a0510854a45ba91a1e4",
+    "pr": 8934
+  },
+  {
+    "branch": "feat/ps5-agcdriver-exports",
+    "sha": "44c36055a2a022aed29c6f6604b079e8070d7f97",
+    "pr": 8933
+  }
+]
