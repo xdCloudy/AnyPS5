@@ -1,0 +1,66 @@
+name: One-shot PS5 3.20 inventory
+
+on:
+  push:
+    branches: ["one-shot/ps5-320-inventory"]
+    paths:
+      - ".github/workflows/one-shot-ps5-320-inventory.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout one-shot runner from contributor fork
+        uses: actions/checkout@v4
+        with:
+          path: runner
+          persist-credentials: false
+      - name: Checkout latest upstream source (read-only)
+        uses: actions/checkout@v4
+        with:
+          repository: boykopovar/AnyPS5
+          ref: main
+          path: upstream
+          persist-credentials: false
+      - name: Checkout pinned 3.20 export inventory (read-only)
+        uses: actions/checkout@v4
+        with:
+          repository: DNNDHH/PS5-3.20_Libs
+          ref: b2a77c09cd71c01f34c790cfbe98c751a13262ad
+          path: firmware-320
+          persist-credentials: false
+      - name: Record source revisions
+        shell: bash
+        run: |
+          echo "UPSTREAM_SHA=$(git -C upstream rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "SOURCE_SHA=$(git -C firmware-320 rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Run offline importer regression tests
+        run: python3 -m unittest discover -s runner/tools/tests -p "test_one_shot_320_inventory.py" -v
+      - name: Enumerate exports and check open PRs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          python3 runner/tools/one_shot_320_inventory.py \
+            --source firmware-320 \
+            --repo upstream \
+            --out inventory-results \
+            --repo-sha "$UPSTREAM_SHA" \
+            --source-sha "$SOURCE_SHA" \
+            --batch-size 150 | tee inventory-run.json
+          cat inventory-results/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload one-time inventory artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ps5-320-one-shot-inventory
+          path: |
+            inventory-results/
+            inventory-run.json
+          if-no-files-found: warn
+          retention-days: 90
