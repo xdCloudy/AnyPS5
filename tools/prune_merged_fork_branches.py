@@ -47,24 +47,24 @@ def prune(entries, token, dry_run=False):
 
         result = {"branch": branch, "pr": number, "expected_sha": sha}
         try:
-            status, pr = api("GET", f"repos/{UPSTREAM}/pulls/{number}", token)
-            if status != 200 or not pr:
-                result["status"] = "skipped_pr_not_found"
-            elif not pr.get("merged_at"):
-                result["status"] = "skipped_not_merged"
-            elif pr.get("head", {}).get("ref") != branch:
-                result["status"] = "skipped_pr_branch_changed"
-            elif (pr.get("head", {}).get("repo") or {}).get("full_name") != FORK:
-                result["status"] = "skipped_pr_owner_changed"
-            elif pr.get("head", {}).get("sha") != sha:
-                result["status"] = "skipped_pr_head_changed"
+            encoded = urllib.parse.quote(branch, safe="/")
+            code, current = api("GET", f"repos/{FORK}/branches/{encoded}", token)
+            if code == 404:
+                result["status"] = "already_deleted"
+            elif code != 200 or not current or current.get("protected") or current["commit"]["sha"] != sha:
+                result["status"] = "skipped_branch_moved_or_protected"
             else:
-                encoded = urllib.parse.quote(branch, safe="/")
-                code, current = api("GET", f"repos/{FORK}/branches/{encoded}", token)
-                if code == 404:
-                    result["status"] = "already_deleted"
-                elif not current or current.get("protected") or current["commit"]["sha"] != sha:
-                    result["status"] = "skipped_branch_moved_or_protected"
+                status, pr = api("GET", f"repos/{UPSTREAM}/pulls/{number}", token)
+                if status != 200 or not pr:
+                    result["status"] = "skipped_pr_not_found"
+                elif not pr.get("merged_at"):
+                    result["status"] = "skipped_not_merged"
+                elif pr.get("head", {}).get("ref") != branch:
+                    result["status"] = "skipped_pr_branch_changed"
+                elif (pr.get("head", {}).get("repo") or {}).get("full_name") != FORK:
+                    result["status"] = "skipped_pr_owner_changed"
+                elif pr.get("head", {}).get("sha") != sha:
+                    result["status"] = "skipped_pr_head_changed"
                 elif dry_run:
                     result["status"] = "eligible_dry_run"
                 else:
