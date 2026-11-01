@@ -102,10 +102,12 @@ void CheckResponseBuilders() {
     Require(std::memcmp(response, untouched, sizeof(response)) == 0, "sceCompanionHttpdSetBody wrote the response");
     RequireNotImplemented([] { sceCompanionHttpdGet2ndScreenStatus(); }, "sceCompanionHttpdGet2ndScreenStatus");
     RequireNotImplemented([] { sceCompanionHttpdGetUserId(); }, "sceCompanionHttpdGetUserId");
-    RequireNotImplemented([] { sceCompanionHttpdInitialize2(); }, "sceCompanionHttpdInitialize2");
+    Require(sceCompanionHttpdInitialize2() == 0, "sceCompanionHttpdInitialize2 failed");
+    Require(sceCompanionHttpdInitialize2() == 0, "a repeated sceCompanionHttpdInitialize2 failed");
     RequireNotImplemented([] { sceCompanionHttpdRegisterRequestBodyReceptionCallback(); }, "sceCompanionHttpdRegisterRequestBodyReceptionCallback");
     RequireNotImplemented([] { sceCompanionHttpdRegisterRequestCallback2(); }, "sceCompanionHttpdRegisterRequestCallback2");
-    RequireNotImplemented([] { sceCompanionHttpdUnregisterRequestBodyReceptionCallback(); }, "sceCompanionHttpdUnregisterRequestBodyReceptionCallback");
+    Require(sceCompanionHttpdUnregisterRequestBodyReceptionCallback() == 0, "body callback unregistration failed");
+    Require(sceCompanionHttpdUnregisterRequestBodyReceptionCallback() == 0, "repeated body callback unregistration failed");
 }
 
 }
